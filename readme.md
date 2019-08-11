@@ -1,6 +1,7 @@
 # DarkSite
 ## UserScripts to turn the web to the dark side
 Darkmode/Nightmode for every website  
+[View and Install from greasyfork.org](https://greasyfork.org/en/scripts/388424-darksite)  
   
 ![Wikipedia](DarkSite_screenshot[0].png)
   
