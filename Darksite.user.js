@@ -15,6 +15,18 @@ window.addEventListener('load', function(){
     });
 });
 
+
+function adjustColor(element) {
+    var style = window.getComputedStyle(element);
+    var background = new Color(style['background-color']);
+    var text = new Color(style['color']);
+    if (background.luma > 100 || text.luma < 200) {
+        element.style.color = text.inverted.toString();
+        element.style.backgroundColor = background.inverted.toString();
+    }
+}
+
+
 var Color = (function () {
     function toHex(num, padding) { return num.toString(16).padStart(padding || 2); }
     function parsePart(value) {
