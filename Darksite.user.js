@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Darksite
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  browse the dark side
 // @author       Tim L. Greller
 // @match        *://*/*
@@ -9,6 +9,7 @@
 // ==/UserScript==
 
 window.addEventListener('load', function(){
+    document.body.style.color = "#c3c0b8";
     document.body.style.backgroundColor = "#1d1511";
     document.querySelectorAll("*").forEach(adjustColor);
 });
@@ -18,7 +19,7 @@ function adjustColor(element) {
     var style = window.getComputedStyle(element);
     var background = new Color(style['background-color']);
     var text = new Color(style['color']);
-    if (background.luma > 100 || text.luma < 200) {
+    if (background.luma > 85 || text.luma < 170) {
         element.style.color = text.inverted.toString();
         element.style.backgroundColor = background.inverted.toString();
     }
