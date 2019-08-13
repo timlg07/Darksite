@@ -1,17 +1,17 @@
-# DarkSite
+﻿# DarkSite
 ## UserScripts to turn the web to the dark side
 Darkmode/Nightmode for every website  
 [View and Install from greasyfork.org](https://greasyfork.org/en/scripts/388424-darksite)  
   
-![Wikipedia](DarkSite_screenshot[0].png)
+![Wikipedia](screenshots/DarkSite_screenshot[0].png)
   
 __________
   
 Version 0.1 was kept as simple & monochrome DarkReader.  
 [View and Install from greasyfork.org](https://greasyfork.org/en/scripts/388370-darkreader)  
 Here are some screenshots of the DarkReader (v-1-0):  
-![Medium#1](DarkReader_screenshot[0].png)
-![Medium#2](DarkReader_screenshot[1].png)
+![Medium#1](screenshots/DarkReader_screenshot[0].png)
+![Medium#2](screenshots/DarkReader_screenshot[1].png)
 
 __________
 # Explanations // Erläuterungen
