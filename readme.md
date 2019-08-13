@@ -3,7 +3,9 @@
 Darkmode/Nightmode for every website  
 [View and Install from greasyfork.org](https://greasyfork.org/en/scripts/388424-darksite)  
   
+Screenshots from Wikipedia and GitHub with DarkSite:
 ![Wikipedia](screenshots/DarkSite_screenshot[0].png)
+![GitHub profile](screenshots/DarkSite_screenshot[1].png)
   
 __________
   
