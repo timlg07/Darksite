@@ -1,20 +1,44 @@
 // ==UserScript==
 // @name         Darksite
-// @namespace    http://tampermonkey.net/
-// @version      1.1
+// @namespace    www.tim-greller.tk
+// @version      1.2
 // @description  browse the dark side
 // @author       Tim L. Greller
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
 
-window.addEventListener('load', function(){
-    document.body.style.color = "#c3c0b8";
-    document.body.style.backgroundColor = "#1d1511";
+
+// init const
+var PREF_COLOR = {
+    fg:"#c3c0b8",
+    bg:"#1d1511"
+}
+
+// main function, executed at the end
+function main(){
     document.querySelectorAll("*").forEach(adjustColor);
-});
 
+    if(window.location.host.includes("google")){
+        document.domain = "google.com";
+        //alert('execute `document.domain = "google.com";` in the console, to give Darksite.user.js permission to change the appearence of the google-site.');
+        window.setTimeout(function(){
+            applyPrefColors(window.top.document.querySelector("#main"));
+            applyPrefColors(window.top.document.querySelector("#hdtb-msb"));
+            applyPrefColors(window.top.document.querySelector("#topabar"));
+        },6000);
+    } else {
+        applyPrefColors(window.top.document.body);
+    }
+}
 
+// apply preferred back- and foreground color to an element e
+function applyPrefColors(e) {
+    e.style.color = PREF_COLOR.fg;
+    e.style.backgroundColor = PREF_COLOR.bg;
+}
+
+// reverse color of an element if it is bright
 function adjustColor(element) {
     var style = window.getComputedStyle(element);
     var background = new Color(style['background-color']);
@@ -25,7 +49,7 @@ function adjustColor(element) {
     }
 }
 
-
+// helper class for color calculations
 var Color = (function () {
     function toHex(num, padding) { return num.toString(16).padStart(padding || 2); }
     function parsePart(value) {
@@ -107,3 +131,6 @@ var Color = (function () {
 
     return Color;
 }());
+
+
+main();
