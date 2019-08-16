@@ -43,9 +43,11 @@ function adjustColor(element) {
     var style = window.getComputedStyle(element);
     var background = new Color(style['background-color']);
     var text = new Color(style['color']);
-    if (background.luma > 120 || text.luma < 150) {
+    if (background.luma > 120) {
         element.style.color = text.inverted.toString();
         element.style.backgroundColor = background.inverted.toString();
+    } else if (text.luma < 150) {
+        element.style.color = text.inverted.toString();
     }
 }
 
