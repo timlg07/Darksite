@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Darksite
 // @namespace    www.tim-greller.tk
-// @version      1.2.1
+// @version      1.2.2
 // @description  browse the dark side
 // @author       Tim L. Greller
 // @match        *://*/*
@@ -46,7 +46,7 @@ function adjustColor(element) {
     if (background.luma > 120) {
         element.style.color = text.inverted.toString();
         element.style.backgroundColor = background.inverted.toString();
-    } else if (text.luma < 150) {
+    } else if (text.luma < 100) {
         element.style.color = text.inverted.toString();
     }
 }
