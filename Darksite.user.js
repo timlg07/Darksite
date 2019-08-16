@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Darksite
 // @namespace    www.tim-greller.tk
-// @version      1.2
+// @version      1.2.1
 // @description  browse the dark side
 // @author       Tim L. Greller
 // @match        *://*/*
